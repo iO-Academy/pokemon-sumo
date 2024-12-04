@@ -11,3 +11,4 @@ May the heaviest pokémon win.
 - Passing down state in Props
 - Styling with [Tailwind](https://tailwindcss.com/)
 - Using [React Router](https://reactrouter.com/) for multiple 'pages'
+- A 'Not Found' route and 'page'

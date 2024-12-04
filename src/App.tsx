@@ -1,6 +1,7 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import { About } from './Components/About'
 import { PokemonBattle } from './Components/PokemonBattle'
+import { NotFound } from './Components/NotFound'
 
 function App() {
 
@@ -15,7 +16,8 @@ function App() {
 
         <Routes>
           <Route path='/'     element={<PokemonBattle />} />
-          <Route path='about' element={<About />} />
+          <Route path='/about' element={<About />} />
+          <Route path='*'     element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
