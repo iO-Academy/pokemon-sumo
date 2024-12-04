@@ -12,3 +12,4 @@ May the heaviest pokémon win.
 - Styling with [Tailwind](https://tailwindcss.com/)
 - Using [React Router](https://reactrouter.com/) for multiple 'pages'
 - A 'Not Found' route and 'page'
+- Using dynamic route placeholders to set up a battle between two pokemon
