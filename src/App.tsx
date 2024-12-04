@@ -4,15 +4,15 @@ import { PokemonBattle } from './Components/PokemonBattle'
 import { NotFound } from './Components/NotFound'
 
 function App() {
-    
+
 
     return (
         <>
-            <h1 className="text-center text-7xl py-12 font-bold">Pokémon Sumo</h1>
+            <h1 className="bg-amber-500 text-sky-700 outline-2 text-center text-8xl py-12 font-black">Pokémon Sumo</h1>
             <BrowserRouter>
-                <div className="mx-auto flex gap-12 justify-center">
-                    <Link to='/' className="text-center text-2xl pb-12">Random</Link>
-                    <Link to='/about' className="text-center text-2xl pb-12">About</Link>
+                <div className="p-2 mb-12 bg-amber-500 flex gap-12 justify-center">
+                    <Link to='/'      className="text-center text-2xl px-6 py-1 rounded-xl bg-slate-700 hover:bg-sky-700 transition-colors">Random</Link>
+                    <Link to='/about' className="text-center text-2xl px-6 py-1 rounded-xl bg-slate-700 hover:bg-sky-700 transition-colors">About</Link>
                 </div>
 
                 <Routes>
