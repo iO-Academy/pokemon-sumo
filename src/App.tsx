@@ -2,8 +2,9 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import { About } from './Components/About'
 import { PokemonBattle } from './Components/PokemonBattle'
 import { NotFound } from './Components/NotFound'
-import UserContext, { weightUnits } from './Contexts/UserContext'
+import UserContext from './Contexts/UserContext'
 import { useState } from 'react'
+import { weightUnits } from './Services/functions'
 
 function App() {
     const [ unit, setUnit ] = useState<weightUnits>('kg')
