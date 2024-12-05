@@ -14,5 +14,6 @@ May the heaviest pokémon win.
 - Using [React Router](https://reactrouter.com/) for multiple 'pages'
 - A 'Not Found' route and 'page'
 - Using dynamic route placeholders to set up a battle between two pokemon
+- Uses React Context for a toggle between metric and imperial weight units
 
 Header graphic created with [Pokémon Fonts Generator](https://pokemon-fonts-generator.netlify.app/)

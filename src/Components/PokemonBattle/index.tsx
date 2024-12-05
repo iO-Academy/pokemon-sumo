@@ -31,8 +31,7 @@ export function PokemonBattle() {
         // but in case it doesn't we can fetch additional data about the pokedex entries
         // const pokedexInfo = await fetch(pokemon.species.url).then(data => data.json())
         // const number = pokedexInfo.pokedex_numbers[0].entry_number
-        let weight = pokemon.weight * 0.1
-        weight = isNaN(weight) ? 0 : weight
+        const weight = isNaN(pokemon.weight) ? 0 : pokemon.weight
         stateSetter({ image: image, name: name, number: which, weight: weight })
     }
     
@@ -41,18 +40,6 @@ export function PokemonBattle() {
         const nid2 = Number(id2)
         getPokemon( nid1, setPokemon1 )
         getPokemon( nid2, setPokemon2 )
-
-        // const randomNum2 = Math.floor(Math.random() * (151 - 1) + 1);
-        // fetch('https://pokeapi.co/api/v2/pokemon/' + randomNum2)
-        //     .then(response => response.json())
-        //     .then(pokemon => {
-        //         const stuffWeNeed = {
-        //             image: pokemon.sprites?.other["official-artwork"]?.front_default ?? '',
-        //             name: capitaliseFirstLetter(pokemon.species?.name) ?? 'missingno.',
-        //             weight: (pokemon?.weight * 0.1)
-        //         }
-        //         setPokemon2(stuffWeNeed)
-        //     })
     }, [id1, id2])
 
     useEffect(() => {
