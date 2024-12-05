@@ -16,7 +16,7 @@ function App() {
 
     return (
         <>
-            <UserContext.Provider value={{ weightUnit: unit }} >
+            <UserContext.Provider value={{ weightUnit: unit, setUnit: toggleUnit }} >
                 <div className="bg-amber-500 p-2">
                     <img className="block mx-auto h-40" src={import.meta.env.BASE_URL + "pokemon-sumo.png"} alt="Pokémon Sumo" />
                 </div>
