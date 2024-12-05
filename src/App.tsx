@@ -9,7 +9,7 @@ function App() {
     return (
         <>
             <div className="bg-amber-500 p-2">
-                <img className="block mx-auto h-40" src="./pokemon-sumo.png" alt="Pokémon Sumo" />
+                <img className="block mx-auto h-40" src={import.meta.env.BASE_URL + "pokemon-sumo.png"} alt="Pokémon Sumo" />
             </div>
             <BrowserRouter>
                 <div className="p-2 mb-12 bg-amber-500 flex gap-12 justify-center">
