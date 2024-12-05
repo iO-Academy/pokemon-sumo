@@ -16,9 +16,6 @@ export function PokemonBattle() {
     const [ message, setMessage ] = useState<string>('Battling...')
     const { id1, id2 } = useParams()
 
-    // pokemon sumo
-    // compare the weights of two randomly selected pokemon, heaviest wins
-
     async function getPokemon( which: number | undefined, stateSetter: React.Dispatch<React.SetStateAction<PokemonData>> ): Promise<void> {
         if ( !which || which < 1 || isNaN(which) ) {
             which = Math.floor(Math.random() * (151 - 1) + 1);
