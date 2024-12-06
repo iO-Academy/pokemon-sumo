@@ -62,7 +62,7 @@ export function PokemonBattle() {
     }, [id1, id2])
 
     useEffect(() => {
-        if (pokemon1.weight === pokemon2.weight) {
+        if (Math.abs(pokemon1.weight - pokemon2.weight) < Number.EPSILON ) {
             setMessage("It's a draw")
         } else if ( pokemon1.weight > pokemon2.weight) {
             setMessage(`${pokemon1.name} wins!`)
