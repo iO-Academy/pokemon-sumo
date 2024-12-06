@@ -10,15 +10,24 @@ export interface PokemonData {
     weight: number
 }
 
+const defaultPokemonData = (): PokemonData => {
+    return {
+        image: import.meta.env.BASE_URL + 'missingno_front_default.png', 
+        name: 'MissingNo.', 
+        number: 0, 
+        weight: 1590.8
+    }
+}
+
 export function PokemonBattle() {
-    const [ pokemon1, setPokemon1 ] = useState<PokemonData>({name: 'missingno.', number: 0, weight: 0})
-    const [ pokemon2, setPokemon2 ] = useState<PokemonData>({image: '', name: 'missingno.', number: 0, weight: 0})
+    const [ pokemon1, setPokemon1 ] = useState<PokemonData>(defaultPokemonData())
+    const [ pokemon2, setPokemon2 ] = useState<PokemonData>(defaultPokemonData())
     const [ message, setMessage ] = useState<string>('Battling...')
     const { id1, id2 } = useParams()
 
     async function getPokemon( which: number | undefined, stateSetter: React.Dispatch<React.SetStateAction<PokemonData>> ): Promise<void> {
         if ( !which || which < 1 || isNaN(which) ) {
-            which = Math.floor(Math.random() * (151 - 1) + 1);
+            which = Math.floor(Math.random() * (1025 - 1) + 1);
         }
         const json = await fetch('https://pokeapi.co/api/v2/pokemon/' + which)
         const pokemon = await json.json()
@@ -40,7 +49,7 @@ export function PokemonBattle() {
     }, [id1, id2])
 
     useEffect(() => {
-        if (pokemon1.weight === pokemon2.weight) {
+        if (Math.abs(pokemon1.weight - pokemon2.weight) < Number.EPSILON ) {
             setMessage("It's a draw")
         } else if ( pokemon1.weight > pokemon2.weight) {
             setMessage(`${pokemon1.name} wins!`)
